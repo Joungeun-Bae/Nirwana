@@ -9,7 +9,8 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 나(我)무위키.</tw-noscript></noscript></tw-story>
-<tw-storydata name="나(我)무위키" startnode="1" creator="Twine" creator-version="2.3.15" ifid="C830A724-B40B-44A2-A40C-26A554259137" zoom="1" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
+<tw-storydata name="나(我)무위키" startnode="1" creator="Twine" creator-version="2.3.15" ifid="C830A724-B40B-44A2-A40C-26A554259137" zoom="1" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+@font-face {
      font-family: 'DungGeunMo';
      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
      font-weight: normal;
@@ -22,6 +23,17 @@ tw-story {
   line-height: 200%;
 }
 
+  tw-story[tags~="diary"] {
+	background-image: url("./resource/back-1.jpeg");
+	background-repeat: no-repeat;
+  	background-position: center center;
+	background-size: 30vw;
+}
+
+tw-link {
+  	outline: none;
+}
+
 tw-hook[name="title"] {
 	font-size: 3vw;
   	float: left;
@@ -32,13 +44,13 @@ tw-hook[name="pull"] {
 	float: right;
 }
 
-tw-hook[name="img"] {
-  animation-duration: 3s;
-  animation-name: slidein;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+tw-hook[name="share"]{
+	float: right;
 }
 
+tw-hook[name="img"] {
+  	position: absolute;
+}
 
 tw-debugger {
 	display: none;
@@ -47,18 +59,7 @@ tw-debugger {
 tw-sidebar {
 	display: none;
 }	
-
-@keyframes slidein {
-  from {
-    margin-left: 50%;
-    width: 200%
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="home" tags="home" position="418,465" size="100,100">[나]&lt;me|는 [자기혐오와 [나]&lt;me|르시시즘]&lt;1| 사이에서 하루에도 몇 번씩 방황하는 사람입니다.
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="home" tags="home" position="432,466" size="100,100">[나]&lt;me|는 [자기혐오와 [나]&lt;me|르시시즘]&lt;1| 사이에서 하루에도 몇 번씩 방황하는 사람입니다.
 (click: ?1)[이 웹페이지는 그런 [[나]&lt;me|의 고질적인 두려움을]&lt;2| 이겨내기 위한 [시도]&lt;3|입니다.]
 (click-replace: ?2)[[나]&lt;me|를 있는 그대로 바라보고 인정하는 일에 대한 공포를]
 (click: ?3)[그래서 [나]&lt;me|를 이루는 [단면]&lt;4|을 [여기]&lt;5|에 아카이브했습니다.]
@@ -67,7 +68,8 @@ tw-sidebar {
 (click-append: ?6)[ 혹은 그냥... 생각의 배설(show: ?last)]
 
 [여기에서 [당신이]&lt;you| 조금 더 넓어질 수 있기를 바랍니다.(click: ?you)[(replace: ?me)[我] (replace: ?you)[당신이라는 또다른 我가]]](last|
-</tw-passagedata><tw-passagedata pid="2" name="header" tags="header" position="300,466" size="100,100">{
+</tw-passagedata><tw-passagedata pid="2" name="header" tags="header" position="302,466" size="100,100">{
+(link-style: via (text-colour: white))[
 (enchant: ?passage&#39;s chars, via (t8n-delay:pos * 10) + (t8n:&#39;instant&#39;))
 
 (if: (passage:)&#39;s name is &quot;home&quot;)[
@@ -80,12 +82,21 @@ tw-sidebar {
 ]
 
 (click-goto: ?title, &quot;home&quot;)(click-goto: ?pull, (str:(random: 1, 4)))
-
+(click: ?share)[(open-url: &quot;https://joungeunbae.notion.site/65385071ba2047d78d26c1c7b763f190&quot;)]
+]
 }
 ---
 
-</tw-passagedata><tw-passagedata pid="3" name="1" tags="diary 20200528 이미지-테스트중" position="539,466" size="100,100">[&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LACMTA_Circle_Red_Line.svg/1200px-LACMTA_Circle_Red_Line.svg.png&quot; width=200px height=auto&gt;]&lt;img|
-(click: ?img)[[오늘 오후]&lt;afternoon|
+</tw-passagedata><tw-passagedata pid="3" name="1" tags="diary 20200528 이미지-테스트중" position="547,471" size="100,100">{(set: _a to 1)
+(for: each _a, ...(range:1,8))
+[(str: &#39;[&lt;img style=&quot;z-index: &#39;
++(str: _a+1)+&#39;;
+position: absolute; left:&#39;
++(str: (random: -200, 700))+&#39;px; top:&#39;
++(str: (random: -200, 300))
++&#39;px; width:&#39;+(str:(random: 50, 300))+&#39;px; height: auto; &quot; src=&quot;./resource/test-&#39;
++(str:_a)+&#39;.png&quot;&gt;]&lt;&#39;+(str: _a)+&#39;|&#39;)]
+}[[오늘 오후]&lt;afternoon|
 [그날 저녁엔]&lt;evening|
 [그리고]&lt;night|]
 
@@ -94,8 +105,19 @@ tw-sidebar {
 (click-append: ?evening)[ 대학로에서 J와 연극을 보았는데 어젯밤에 읽었던 논문의 연구대상이 등장인물과 겹쳐지는 건 웬일인지! 무척이나 두근거리는 경험이었다. 조금도 예상치 못한 곳에서 만난 연결은 오늘 봤던 전시- 그 때 읽었던 책- 언젠가 만났던 사람- ...을 거쳐 확장되며 생명력을 갖게 되는 것이다. 그것은 또 J와의 대화를 먹고 자라거나 어쩌면 B와도 닿아있을지 모른다]
 
 (click-append: ?night)[ ... ... 늘 별 일 없이 지나가던 밤 시간대까지 아주 유쾌하고 재미있는 일로 채워진 날이었단 거다. 오늘같은 하루는 적어두었다가 마치 여행지에서 사 온 디저트처럼 질릴 때까지 맛을 보아야 한다 눈앞에 없어도 향기와 식감이 기억날 만큼]
+{(click: ?exhibition)[(open-url: &quot;http://www.snumoa.org/exhibitions_view.php?exh_id=126&quot;)]
+}</tw-passagedata><tw-passagedata pid="4" name="3" tags="테스트용페이지" position="292,580" size="100,100">{(set: _a to 1)
+(for: each _a, ...(range:1,8))
+[(str: &#39;[&lt;img style=&quot;z-index: &#39;
++(str: _a+1)+&#39;;
+position: absolute; left:&#39;
++(str: (random: -200, 700))+&#39;px; top:&#39;
++(str: (random: -200, 300))
++&#39;px; width:&#39;+(str:(random: 50, 300))+&#39;px; height: auto; &quot; src=&quot;./resource/test-&#39;
++(str:_a)+&#39;.png&quot;&gt;]&lt;&#39;+(str: _a)+&#39;|&#39;)]
+}
 
-(click: ?exhibition)[(open-url: &quot;http://www.snumoa.org/exhibitions_view.php?exh_id=126&quot;)]</tw-passagedata><tw-passagedata pid="4" name="3" tags="테스트용페이지" position="297,581" size="100,100">gold and silver
+gold and silver
 (enchant: &quot;gold&quot;, (text-colour: yellow) + (text-style:&#39;bold&#39;))
 
 [[애니메이션 테스트-&gt;4]] 
@@ -103,6 +125,7 @@ tw-sidebar {
 (enchant: ?ghost, (text-style:&#39;outline&#39;))
 |ghost&gt;[Awooo]
 (link:&quot;&gt;Wait.&quot;)[|ghost&gt;[Oooowooo]]
+{
 
 (enchant:?frog, (text-style:&quot;italic&quot;))
 &quot;Opening remarks?&quot;
@@ -111,16 +134,60 @@ tw-sidebar {
 [&quot;Your response?&quot;
 |frog&gt;[&quot;Croak, croak.&quot;]
 &quot;A stunning rebuke!&quot;
-|frog&gt;[&quot;Croooak.&quot;]]</tw-passagedata><tw-passagedata pid="5" name="4" tags="테스트용페이지" position="428,583" size="100,100">
+|frog&gt;[&quot;Croooak.&quot;]]</tw-passagedata><tw-passagedata pid="5" name="4" tags="테스트용페이지" position="429,588" size="100,100">{(set: _a to 1)
+(for: each _a, ...(range:1,8))
+[(str: &#39;[&lt;img style=&quot;z-index: &#39;
++(str: _a+1)+&#39;;
+position: absolute; left:&#39;
++(str: (random: -200, 700))+&#39;px; top:&#39;
++(str: (random: -200, 300))
++&#39;px; width:&#39;+(str:(random: 50, 300))+&#39;px; height: auto; &quot; src=&quot;./resource/test-&#39;
++(str:_a)+&#39;.png&quot;&gt;]&lt;&#39;+(str: _a)+&#39;|&#39;)]
+}
 |fan)[The overhead fan spins lazily.]
 
 (link:&quot;Turn on fan&quot;)[(t8n:&quot;dissolve&quot;)(show:?fan)]
 
 A categorical catastrophe!
-</tw-passagedata><tw-passagedata pid="6" name="footer" tags="footer" position="550,584" size="100,100">(set: $tag to (passage:)&#39;s tags)
----
+</tw-passagedata><tw-passagedata pid="6" name="footer" tags="footer" position="552,583" size="100,100">
+{(set: $tag to (passage:)&#39;s tags)
+(animate:?2, &quot;rumble&quot;)
+(animate:?3, &quot;pulse&quot;)
+(click-goto: ?1, &#39;2&#39;)
 
-$tag</tw-passagedata><tw-passagedata pid="7" name="2" tags="diary" position="654,466" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+---
+}
+=|=
+(if: (passage:)&#39;s tags contains &quot;home&quot;)[[나]&lt;me|를 꺼내주세요](else: )[$tag]
+=|=
+[당신의 일부를 [나]&lt;me|누고 싶다면]&lt;share|
+|==|
+</tw-passagedata><tw-passagedata pid="7" name="2" tags="diary" position="659,470" size="100,100">{(set: _a to 1)
+(for: each _a, ...(range:1,8))
+[(str: &#39;[&lt;img style=&quot;z-index: &#39;
++(str: _a+1)+&#39;;
+position: absolute; left:&#39;
++(str: (random: -200, 700))+&#39;px; top:&#39;
++(str: (random: -200, 300))
++&#39;px; width:&#39;+(str:(random: 50, 300))+&#39;px; height: auto; &quot; src=&quot;./resource/test-&#39;
++(str:_a)+&#39;.png&quot;&gt;]&lt;&#39;+(str: _a)+&#39;|&#39;)]
+}</tw-passagedata><tw-passagedata pid="8" name="DisplayImageLink" tags="" position="456,704" size="100,100">{
+    (if: $imageIndex &gt; $images&#39;s length)[
+		(set: $imageIndex to 1)
+	]
+
+	(set: $image to 
+			&#39;&lt;img src=&quot;&#39; +
+			(text: $images&#39;s ($imageIndex)) +
+			&#39;&quot; width=&quot;50&quot; height=&quot;50&quot;&#39;)
+
+	(link: $image)[
+		(set: $imageIndex to it + 1)
+		(replace: ?workarea)[\
+			(display: &quot;DisplayImageLink&quot;)\
+		]
+	]
+}</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
