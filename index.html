@@ -19,20 +19,25 @@
 
 tw-story {
   font-family: 'DungGeunMo', normal;
-  font-size: 1.5vw;
+  font-size: 15px;
   line-height: 200%;
-}
-
-  tw-story[tags~="diary"] {
-	background-image: url("./resource/back-1.jpeg");
 	background-repeat: no-repeat;
   	background-position: center center;
 	background-size: 30vw;
 }
 
-tw-link {
-  	outline: none;
+  tw-story[tags~="botanica"] {
+	background-image: url("./resource/botanica.png");
+
 }
+
+  tw-story[tags~="christmas"] {
+	background-image: url("./resource/christmas.png");
+}
+
+/*tw-link {
+  	outline: none;
+}*/
 
 tw-hook[name="title"] {
 	font-size: 3vw;
@@ -59,16 +64,19 @@ tw-debugger {
 tw-sidebar {
 	display: none;
 }	
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="home" tags="home" position="433,466" size="100,100">[나]&lt;me|는 [자기혐오와 [나]&lt;me|르시시즘]&lt;nar| 사이에서 하루에도 몇 번씩 방황하는 사람입니다.
-(click: ?nar)[이 웹페이지는 그런 [[나]&lt;me|의 고질적인 두려움을]&lt;fear| 이겨내기 위한 [시도]&lt;effort|입니다.]
-(click-replace: ?fear)[[나]&lt;me|를 있는 그대로 바라보고 인정하는 일에 대한 공포를]
-(click: ?effort)[그래서 [나]&lt;me|를 이루는 [단면]&lt;side|을 [여기]&lt;here|에 아카이브했습니다.]
-(click-append: ?side)[과 그것끼리의 연결고리들]
-(click: ?here)[이 공간은 [[나]&lt;me|라는 존재의 시각화]&lt;visual|일 수도 있겠습니다.]
-(click-append: ?visual)[ 혹은 그냥... 생각의 배설(show: ?last)]
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="letter" color="yellow"></tw-tag>,<tw-tag name="diary" color="green"></tw-tag>,<tw-tag name="home" color="gray"></tw-tag>,<tw-tag name="effect" color="orange"></tw-tag><tw-passagedata pid="1" name="home" tags="home" position="205,483" size="200,200">[나]&lt;me|는 [자기연민과 [나]&lt;me|르시시즘]&lt;nar| 사이에서 하루에도 몇 번씩 방황하는 사람입니다.
 
-[여기에서 [당신이]&lt;you| 조금 더 넓어질 수 있기를 바랍니다.(click: ?you)[(replace: ?me)[我] (replace: ?you)[당신이라는 또다른 我가]]](last|
-</tw-passagedata><tw-passagedata pid="2" name="header" tags="header" position="947,467" size="100,100">{
+[이 웹페이지는 그런 [[나]&lt;me|의 고질적인 두려움을]&lt;fear| 이겨내기 위한 [시도]&lt;effort|입니다.](click-replace: ?fear)[[나]&lt;me|를 있는 그대로 바라보고 인정하는 일에 대한 공포를]
+
+[그래서 [나]&lt;me|를 이루는 [단면]&lt;side|을 [여기]&lt;here|에 아카이브했습니다.]
+{(click-replace: ?side)[일기와 편지로 연결된 기억들]
+(click: ?here)[이 공간은 [[나]&lt;me|라는 존재의 시각화]&lt;visual|일 수도 있겠습니다.]
+(click-append: ?visual)[ 혹은 그냥... 생각의 배설]
+}
+
+[여기에서 [당신이]&lt;you| 조금 더 넓어질 수 있기를 바랍니다.(click: ?you)[(replace: ?me)[我] (replace: ?you)[당신이라는 또다른 我가]]]&lt;last|
+
+</tw-passagedata><tw-passagedata pid="2" name="header" tags="header" position="891,364" size="200,200">{
 (link-style: via (text-colour: white))[
 (enchant: ?passage&#39;s chars, via (t8n-delay:pos * 10) + (t8n:&#39;instant&#39;))
 
@@ -76,96 +84,111 @@ tw-sidebar {
 (text-style:&quot;outline&quot;)[온라인 단상집 [나]&lt;me|무위키]&lt;title|
 (text-style:&quot;outline&quot;)[[나]&lt;me| 꺼내기]&lt;pull|
 ]
+
 (else:)[
 (text-style:&quot;outline&quot;)[온라인 단상집 我무위키]&lt;title|
 (text-style:&quot;outline&quot;)[我 꺼내기]&lt;pull|
 ]
 
-(click-goto: ?title, &quot;home&quot;)(click-goto: ?pull, (str:(random: 1, 4)))
+(click-goto: ?title, &quot;home&quot;)
+(click-goto: ?pull, (str:(random: 1, 5)))
+
 (click: ?share)[(open-url: &quot;https://joungeunbae.notion.site/65385071ba2047d78d26c1c7b763f190&quot;)]
 ]
 }
 ---
 
-</tw-passagedata><tw-passagedata pid="3" name="1" tags="diary 20200528 이미지-테스트중" position="548,471" size="100,100">{(set: _a to 1)
-(for: each _a, ...(range:1,8))
-[(str: &#39;[&lt;img style=&quot;z-index: &#39;
-+(str: _a+1)+&#39;;
-position: absolute; left:&#39;
-+(str: (random: -200, 700))+&#39;px; top:&#39;
-+(str: (random: -200, 300))
-+&#39;px; width:&#39;+(str:(random: 50, 300))+&#39;px; height: auto; &quot; src=&quot;./resource/test-&#39;
-+(str:_a)+&#39;.png&quot;&gt;]&lt;&#39;+(str: _a)+&#39;|&#39;)]
-}[[오늘 오후]&lt;afternoon|
-[그날 저녁엔]&lt;evening|
-[그리고]&lt;night|]
+</tw-passagedata><tw-passagedata pid="3" name="1" tags="diary 20200528 christmas" position="448,366" size="200,200">[오늘 오후]&lt;afternoon|
+[저녁엔]&lt;evening|
+[그리고]&lt;night|{
+&lt;br&gt;
+(click: ?afternoon)[ 학교 미술관에서 큐레이터와의 전시 관람 기회가 있어 다녀왔다. [우울한가요?]&lt;exhibition| 라는 물음이 어떤 영역까지 뻗치는지 이를 보는 시각과 관점과 각자들의 삶이 회화로 조소로...또는 그것을 둘러싼 맥락 그 사이의 무엇으로 잉태되어 오늘 나와 만난 것이다.]
+&lt;br&gt;
+(click: ?evening)[ 대학로에서 J와 [연극]&lt;rainbowplay|을 보았는데 어젯밤에 읽었던 논문의 연구대상이 등장인물과 겹쳐지는 건 웬일인지! 무척이나 두근거리는 경험이었다. 조금도 예상치 못한 곳에서 만난 연결은 오늘 봤던 전시- 그 때 읽었던 책- 언젠가 만났던 사람- ...을 거쳐 확장되며 생명력을 갖게 되는 것이다. 그것은 또 J와의 대화를 먹고 자라거나 어쩌면 B와도 닿아있을지 모른다]
+&lt;br&gt;
+(click: ?night)[ ... ... 늘 별 일 없이 지나가던 밤 시간대까지 아주 유쾌하고 재미있는 일로 채워진 날이었단 거다. 오늘같은 하루는 적어두었다가 마치 여행지에서 사 온 디저트처럼 질릴 때까지 맛을 보아야 한다 눈앞에 없어도 향기와 식감이 기억날 만큼]
 
-(click-append: ?afternoon)[ 학교 미술관에서 큐레이터와의 전시 관람 기회가 있어 다녀왔다. [우울한가요?]&lt;exhibition| 라는 물음이 어떤 영역까지 뻗치는지 이를 보는 시각과 관점과 각자들의 삶이 회화로 조소로...또는 그것을 둘러싼 맥락 그 사이의 무엇으로 잉태되어 오늘 나와 만난 것이다.]
-
-(click-append: ?evening)[ 대학로에서 J와 [연극]&lt;rainbowplay|을 보았는데 어젯밤에 읽었던 논문의 연구대상이 등장인물과 겹쳐지는 건 웬일인지! 무척이나 두근거리는 경험이었다. 조금도 예상치 못한 곳에서 만난 연결은 오늘 봤던 전시- 그 때 읽었던 책- 언젠가 만났던 사람- ...을 거쳐 확장되며 생명력을 갖게 되는 것이다. 그것은 또 J와의 대화를 먹고 자라거나 어쩌면 B와도 닿아있을지 모른다]
-
-(click-append: ?night)[ ... ... 늘 별 일 없이 지나가던 밤 시간대까지 아주 유쾌하고 재미있는 일로 채워진 날이었단 거다. 오늘같은 하루는 적어두었다가 마치 여행지에서 사 온 디저트처럼 질릴 때까지 맛을 보아야 한다 눈앞에 없어도 향기와 식감이 기억날 만큼]
-{(click: ?exhibition)[(open-url: &quot;http://www.snumoa.org/exhibitions_view.php?exh_id=126&quot;)]
+(click: ?exhibition)[(open-url: &quot;http://www.snumoa.org/exhibitions_view.php?exh_id=126&quot;)]
 (click: ?rainbowplay)[(open-url: &quot;http://ticket.yes24.com/Perf/36681&quot;)]
-}</tw-passagedata><tw-passagedata pid="4" name="3" tags="테스트용페이지" position="546,586" size="100,100">{(set: _a to 1)
-(for: each _a, ...(range:1,8))
-[(str: &#39;[&lt;img style=&quot;z-index: &#39;
-+(str: _a+1)+&#39;;
-position: absolute; left:&#39;
-+(str: (random: -200, 700))+&#39;px; top:&#39;
-+(str: (random: -200, 300))
-+&#39;px; width:&#39;+(str:(random: 50, 300))+&#39;px; height: auto; &quot; src=&quot;./resource/test-&#39;
-+(str:_a)+&#39;.png&quot;&gt;]&lt;&#39;+(str: _a)+&#39;|&#39;)]
+}</tw-passagedata><tw-passagedata pid="4" name="3" tags="letter 20190806 effect" position="441,586" size="200,200">{(set: $category to &quot;everglow2-&quot;)
+(set: $maxnumber to 20)
 }
+[오늘은 출근 이후에 운동을 다녀와서 뭘 할까 하다가 남서울미술관엘 갔어 (생각보다 전시 공간이 크지 않아서 지금은 근처 카페에서 이걸 쓰고 있어) 사당 쪽에 오니까 네 생각이 나더라. 그래서 반디앤루니스에서 편지지랑 펜을 샀어 지난번에 목걸이랑 그림 정말 고마웠던 거 아니 생각지도 못했는데 말야]
 
-gold and silver
-(enchant: &quot;gold&quot;, (text-colour: yellow) + (text-style:&#39;bold&#39;))
-(enchant: ?ghost, (text-style:&#39;outline&#39;))
-|ghost&gt;[Awooo]
-(link:&quot;&gt;Wait.&quot;)[|ghost&gt;[Oooowooo]]
-(enchant:?frog, (text-style:&quot;italic&quot;))
-&quot;Opening remarks?&quot;
-|frog&gt;[&quot;Crok, crok, crok.&quot;]
-(enchant-in: ?frog, (text-colour:green))
-[&quot;Your response?&quot;
-|frog&gt;[&quot;Croak, croak.&quot;]
-&quot;A stunning rebuke!&quot;
-|frog&gt;[&quot;Croooak.&quot;]]</tw-passagedata><tw-passagedata pid="5" name="4" tags="테스트용페이지" position="660,583" size="100,100">{(set: _a to 1)
-(for: each _a, ...(range:1,8))
-[(str: &#39;[&lt;img style=&quot;z-index: &#39;
-+(str: _a+1)+&#39;;
-position: absolute; left:&#39;
-+(str: (random: -200, 700))+&#39;px; top:&#39;
-+(str: (random: -200, 300))
-+&#39;px; width:&#39;+(str:(random: 50, 300))+&#39;px; height: auto; &quot; src=&quot;./resource/test-&#39;
-+(str:_a)+&#39;.png&quot;&gt;]&lt;&#39;+(str: _a)+&#39;|&#39;)]
+[그거 오늘도 수업하러 갈 때 차고 갔어 물론 everglow도 ^.^ 도서관 갔을 때 너한테 카톡했던 거 기억나니? &lt;내 이름은 빨강&gt; 지금 읽는 중이야 불문학 독문학 영문학 국문학 등등의 틈바구니에서 이슬람 문화를 배경으로 하는 소설은 처음 읽어 봐. 그래서 정말 신선해 추천해 줘서 고맙다고 얘기하고 싶었어.]
+
+[그리고 그날 &lt;향기&gt;라는 소설을 우연히 같이 빌렸어 이게 좀 오래된 거라 &lt;향수&gt;로도 번역이 되는 것 같긴 한데 무튼간 정말 재미있어! 묘사가 탁월한 문장들이 진짜 인상적이야 물론 이야기 자체도 흥미롭지만 나는 그 상세한 묘사들이 좋았어 나는 디테일을 참 좋아해 수공예품의 마감이나 영화 같은 영상물에서 을 꼼꼼히 아니면 그래픽 자료들을 보다 보면 오 하고 눈치채게 되는 그런 디테일 있잖아 크게 보면 완성도이고 작게 보면 재치인 그런 요소들을 마주하면 나는 기분이 참 좋아져 나중에 너의 작업에서도 찾을 수 있겠지? ]
+
+[내가 잔뜩 주눅들어서 하소연했던 거 기억나니? 네가 담담하게 괜찮다고 얘기해 줘서 힘이 많이 됐어 그냥 하는 말이 아니라. 정말로 그때 일만 생각하면 심장이 막 뛰는 것 같고 아무것도 손에 안 잡히고 그랬는데 덕분에 다시 중심을 찾은 것 같아. 이거 정말 고마웠어.]
+
+[그러니까 더 힘내줘~ 네가 무너지지 않아야 나중 미래에 누군가가 또 나처럼 너의 영향을 받아 다시 일어나고 작품을 보고 영감을 받고... 이런 행복한 일들이 생길 수 있지 않겠니. 건강 잘 챙기고 몸이든 마음이든. ]</tw-passagedata><tw-passagedata pid="5" name="4" tags="letter 202190306 effect" position="664,587" size="200,200">{(set: $category to &quot;cat-&quot;)
+(set: $maxnumber to 12)
 }
-|fan)[The overhead fan spins lazily.]
-(link:&quot;Turn on fan&quot;)[(t8n:&quot;dissolve&quot;)(show:?fan)]
-A categorical catastrophe!
-</tw-passagedata><tw-passagedata pid="6" name="footer" tags="footer" position="1058,469" size="100,100">
-{(set: $tag to (passage:)&#39;s tags)
-(animate:?2, &quot;rumble&quot;)
-(animate:?3, &quot;pulse&quot;)
-(click-goto: ?1, &#39;2&#39;)
+[사실 그동안 꽤 자만하고 있었어. 뭐든 남들보다 앞서 있는 편이라고 생각하고 특별한 척 고상한 척 하기 바빴던 것 같아. 남들보다 늦었다는 게 너무 비참하고 창피해서 그럴싸한 말로 둘러대고, 또 실력이 모자라 보이는 사람을 무시하고 싫어하기도 했어. 다른 사람들 눈에 내가 그렇게 보인다는 게 참 무서웠거든. 그래서 맨날 숨기고 다시 표출하고를 반복했던 것 같아. 아직 나아진 건 없지만.]
+
+[요즘은 조금 체념한 듯해.. 이런저런 다른 생각들도 많고 피할 궁리도 많이 했고...아등바등 살고 있는 거겠지? 꽉 찬 2호선에 지쳐 있던 시절이 그립기도 하고 왜 그때 헤쳐나가지 못했는지 후회스럽기도 하다.]
+
+[어떻게 생각해도 시간은 지났고 그 시간 자체는 가치있었다고 말해줘서 그러니까, 나조차 부정하려 했던 시간을 제대로 봐 줘서 고마워. 암튼간 언제나 척척 해내는 我! 선두를 달리는 모습은 정말 멋있고 존경스럽지만 가끔은 완벽에 가까운 모습에 위태롭기도 해 지치진 않을까 하고.]
+
+[배울 점을 많이 보여줘서 고마워. 같이 성장해가자. 아직은 무한해 보이는 시간이지만, 지금보다 격렬하게 행복하고 알차기를 바라.]
+
+[-아주 [뚱뚱한 고양이]&lt;bonbon|를 키워서 모든 고양이가 말라 보이는 我 씀, 것도 2019년에-]</tw-passagedata><tw-passagedata pid="6" name="footer" tags="footer" position="1103,361" size="200,200">
+{
+(if: (passage:)&#39;s tags contains &quot;effect&quot;)[
+	(set: _a to 1)(set: _b to 1)
+	
+	(for: each _a, ...(range:1, $maxnumber))[
+	(str: &#39;[&lt;img style=&quot;z-index: &#39;
+	+(str: _a+1)
+	+&#39;;position: absolute; left:&#39;
+	+(str: (random: -200, 700))
+	+&#39;px; top:&#39;
+	+(str: (random: -300, 100))
+	+&#39;px; width:&#39;
+	+(str:(random: 50, 200))
+	+&#39;px; height: auto; transform:rotate(&#39;
+	+(str: (random: 0, 360))
+	+&#39;deg);&quot; src=&quot;./resource/&#39;
+	+$category
+	+(str:_a)
+	+&#39;.png&quot;&gt;]&lt;&#39;
+	+$category+(str: _a)
+	+&#39;|&#39;)
+	]
+
+	(for: each _b, ...(range:1, $maxnumber))[
+	(animate: (hooks-named: $category+(str: _b)), &quot;zoom&quot;)]
+]
+
+(else: )[(animate:?passage&#39;s links, &quot;flicker&quot;)]
+
+(set: $tags to (passage:)&#39;s tags)
+(set: $tagdisplay to $tags&#39;s 1stto2nd)
 
 ---
 }
 =|=
-(if: (passage:)&#39;s tags contains &quot;home&quot;)[[나]&lt;me|를 꺼내주세요](else: )[$tag]
+(if: $tags contains &quot;home&quot;)[[나]&lt;me|를 꺼내주세요](else: )[$tagdisplay]
 =|=
-[당신의 일부를 [나]&lt;me|누고 싶다면]&lt;share|
+[당신의 일부도 [나]&lt;me|누고 싶다면]&lt;share|
 |==|
-</tw-passagedata><tw-passagedata pid="7" name="2" tags="diary" position="658,470" size="100,100">{(set: _a to 1)
-(for: each _a, ...(range:1,8))
-[(str: &#39;[&lt;img style=&quot;z-index: &#39;
-+(str: _a+1)+&#39;;
-position: absolute; left:&#39;
-+(str: (random: -200, 700))+&#39;px; top:&#39;
-+(str: (random: -200, 300))
-+&#39;px; width:&#39;+(str:(random: 50, 300))+&#39;px; height: auto; &quot; src=&quot;./resource/test-&#39;
-+(str:_a)+&#39;.png&quot;&gt;]&lt;&#39;+(str: _a)+&#39;|&#39;)]
-}</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="7" name="2" tags="letter 20190516 effect" position="665,366" size="200,200">&lt;!--(change: ?page, (background: ))--&gt;
+{(set: $category to &#39;everglow-&#39;)
+(set: $maxnumber to 21)
+}
+[아직 21살인 나에게도 돌이켜 보면 좋은 순간들이 참 많은 것 같아. 이 기억들이 돌이켜 봐서 더 좋은 걸지도 모르지만... 어느 누구는 기억은 기록을 이기지 못한다고 말하는데, 나는 글쎄, 기록되지 않은 기억은 엄청난 힘을 가지고 있다고 생각해. 고등학생 때 우연히 유튜브에서 한 [노래]&lt;everglow|를 들은 적이 있어.]
+
+(click: ?everglow)[
+그 노래가 말하길, 인연은 오고가기 마련이지만 가버린 것들 속에서 어떤 마음은 영원히 빛나고 있을 거래. 무엇이 가버릴진 잘 모르겠고...그로 인해 큰 상처를 받을까 두렵기도 하지만 그때 남을 내 마음에 또는 누군가에게서 받았던 그것들이 기대가 되기도 해.]
+
+[[저번에 보내준 편지]&lt;lastletter| 잘 받았어. 몇 번을 펼쳐 읽었는지 모를 거야. 읽으면 뭔가 벅차오르는 기분이야. 이런 기분 들게 해 줘서 고마워. 너랑 지내는 시간이 길어질수록 많은 걸 얻고 배우는 것 같아. 환산할 수도, 언어적으로 표현할 수도 없는 무언가 말야.]
+
+[나도 너에게 이런 존재이고 싶다는 생각이 들 정도야. 이러니 저러니 해도 오늘의 주인공은 우리의 시들지 않는 꽃이야. 라일락이 네가 생각한 꽃이길 바라. 우리의 젊은 추억들이 영원히 기억되길!]
+</tw-passagedata><tw-passagedata pid="8" name="5" tags="letter 20200916 botanica" position="884,583" size="200,200">우체국에 못(?) 안 간지 꽤 돼서 편지의 흐름이 끊기진 않을까 걱정했는데
+
+뜬금없는 얘기를 하자면 난 영화 속 20세기의 사랑과 관계를 엄청 동경해왔어.
+
+별 내용 없었지만 이런 일상들이 차곡차곡 쌓이길!</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
