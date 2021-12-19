@@ -76,6 +76,10 @@ tw-sidebar {
 	display: none;
 }	
 
+#honeypot {
+  display: none; /*일반적인 사용자에게 보이지 않도록 숨기세요*/
+}
+
 @keyframes color-change {
   0% { color: #9145B6; }
   25% { color: #4C3F91; }
@@ -502,20 +506,26 @@ dkdkfkfdkajfskjfl
         &lt;i class=&quot;fa fa-paper-plane&quot;&gt;&lt;/i&gt;&amp;nbsp;Send&amp;nbsp;&lt;/button&gt;
     &lt;/div&gt;
 
+	 <label class="sr-only">Keep this field blank</label>
+  <input id="honeypot" type="text" name="honeypot" value="" />
+	
     &lt;!-- Customise the Thankyou Message People See when they submit the form: --&gt;
 	
     &lt;div class=&quot;thankyou_message&quot; style=&quot;display:none;&quot;&gt;
       &lt;h2&gt;&lt;em&gt;Thanks&lt;/em&gt; for contacting us!
         We will get back to you soon!&lt;/h2&gt;
     &lt;/div&gt;
+	
+		
+  &lt;!-- Submit the Form to Google Using &quot;AJAX&quot; --&gt;
+  &lt;script data-cfasync=&quot;false&quot; src=&quot;form-submission-handler.js&quot;&gt;&lt;/script&gt;
 
   &lt;/form&gt;
+
   
 &lt;/body&gt;
 &lt;/html&gt;
 
-  &lt;!-- Submit the Form to Google Using &quot;AJAX&quot; --&gt;
-  &lt;script data-cfasync=&quot;false&quot; src=&quot;form-submission-handler.js&quot;&gt;&lt;/script&gt;
 &lt;!-- END --&gt;
 }</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
