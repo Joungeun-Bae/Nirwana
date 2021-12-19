@@ -76,10 +76,6 @@ tw-sidebar {
 	display: none;
 }	
 
-#honeypot {
-  display: none; /*일반적인 사용자에게 보이지 않도록 숨기세요*/
-}
-
 @keyframes color-change {
   0% { color: #9145B6; }
   25% { color: #4C3F91; }
@@ -91,25 +87,15 @@ tw-sidebar {
 textarea {
   width: 100%;
 }
-.content-head {
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 2em 0 1em;
-}
-.is-center {
-  text-align: center;
-}
-.button-success {
-  color: white;
+
+button {
+  float: right;
+  cursor: pointer;
+  font-family: 'DungGeunMo', normal;
+  font-size: 2vw;
+  padding: 5px;
   border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  background: rgb(28, 184, 65); /* this is a green */
-}
-.button-xlarge {
-  font-size: 125%;
-}
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="ImageScatter" color="orange"></tw-tag>,<tw-tag name="a-letter-from-you" color="yellow"></tw-tag>,<tw-tag name="diary" color="green"></tw-tag>,<tw-tag name="effect" color="orange"></tw-tag>,<tw-tag name="home" color="gray"></tw-tag>,<tw-tag name="imagetest" color="orange"></tw-tag>,<tw-tag name="letter" color="yellow"></tw-tag>,<tw-tag name="letter-from-me" color="blue"></tw-tag>,<tw-tag name="letter-from-you" color="yellow"></tw-tag>,<tw-tag name="我가-받은-편지" color="yellow"></tw-tag>,<tw-tag name="我가-보낸-편지" color="blue"></tw-tag>,<tw-tag name="일기" color="green"></tw-tag><tw-passagedata pid="1" name="home" tags="NIRWANA (current-date:)&amp;nbsp;&amp;nbsp;(current-time:)" position="494,85" size="200,200">[나]&lt;I|는 자기연민과 나르시시즘 사이에서 하루에도 몇 번씩 방황하는 사람입니다.
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="ImageScatter" color="orange"></tw-tag>,<tw-tag name="a-letter-from-you" color="yellow"></tw-tag>,<tw-tag name="diary" color="green"></tw-tag>,<tw-tag name="effect" color="orange"></tw-tag>,<tw-tag name="home" color="gray"></tw-tag>,<tw-tag name="imagetest" color="orange"></tw-tag>,<tw-tag name="letter" color="yellow"></tw-tag>,<tw-tag name="letter-from-me" color="blue"></tw-tag>,<tw-tag name="letter-from-you" color="yellow"></tw-tag>,<tw-tag name="我가-받은-편지" color="yellow"></tw-tag>,<tw-tag name="我가-보낸-편지" color="blue"></tw-tag>,<tw-tag name="일기" color="green"></tw-tag><tw-passagedata pid="1" name="home" tags="NIRWANA (current-date:)&amp;nbsp;&amp;nbsp;(current-time:)" position="494,85" size="200,200">[나]&lt;I|는 자기연민과 나르시시즘 사이에서 하루에도 몇 번씩 방황하는 사람입니다.
 
 [나]&lt;I|의 존재를 있는 그대로 인정하기가 참 두렵습니다.
 
@@ -171,7 +157,7 @@ textarea {
 
 (click: ?toggle)[요즘은 조금 체념한 듯해. 이런저런 다른 생각들도 많고 피할 궁리도 많이 했고. 아등바등 살고 있는 거겠지? 왜 진작에 헤쳐나가지 못했는지 후회스럽기도 하다. 어떻게 생각해도 시간은 지났고 그 자체는 가치있었다고 말해줬지. 나조차 부정하려 했던 시간을 제대로 봐 줘서 고마워.]
 
-네가 뭐든지 척척 해내며 선두를 달리는 모습은 정말 멋있고 존경스럽지만 가끔은 완벽에 가까운 모습에 위태롭기도 해 지치진 않을까 하고. 그래도 배울 점을 많이 보여줘서 고마워. 같이 성장해가자. 아직은 무한해 보이는 시간이지만, 지금보다 격렬하게 행복하고 알차기를 바라.</tw-passagedata><tw-passagedata pid="6" name="footer" tags="footer" position="1109,93" size="200,200">{
+네가 뭐든지 척척 해내며 선두를 달리는 모습은 정말 멋있고 존경스럽지만 가끔은 완벽에 가까운 모습에 위태롭기도 해 지치진 않을까 하고. 그래도 배울 점을 많이 보여줘서 고마워. 같이 성장해가자. 아직은 무한해 보이는 시간이지만, 지금보다 격렬하게 행복하고 알차기를 바라.</tw-passagedata><tw-passagedata pid="6" name="footer" tags="footer" position="1110,94" size="200,200">{
 (click-goto: ?title, &quot;home&quot;)
 (click-goto: ?pull, (str: (random: 1,40)))
 (click-goto: ?share, &quot;share&quot;)
@@ -187,11 +173,10 @@ textarea {
 =|=
 [나]&lt;I|를 꺼내주세요
 =|=
-(if: (passage:)&#39;s name is &quot;home&quot;)[[우연이 이끄는 대로]&lt;serend|]
-(else-if: (passage:)&#39;s name is in (str: (range:1, 40)))[
+(if: (passage:)&#39;s name is in (str: (range:1, 40)))[
 [이야기 보태기]&lt;share|
 ]
-(else: )[[Nirwana]&lt;share|]
+(else: )[[우연이 이끄는 대로]&lt;serend|]
 |==|
 }
 </tw-passagedata><tw-passagedata pid="7" name="6" tags="2019-05-16 letter-from-you ImageScatter" position="1288,359" size="200,200">[아직 21살인 나에게도 돌이켜 보면 좋은 순간들이 참 많은 것 같아. 이 기억들이 돌이켜 봐서 더 좋은 걸지도 모르지만... 어느 누구는 기억은 기록을 이기지 못한다고 말하는데, 나는 글쎄, 기록되지 않은 기억은 엄청난 힘을 가지고 있다고 생각해. 고등학생 때 우연히 유튜브에서 한 [노래]&lt;everglow|를 들은 적이 있어.]
@@ -357,12 +342,7 @@ Youth is wasted on the young, 청춘이 청춘들에게 낭비되고 있다고, 
 
 통찰이 깊은 사람과의 대화가 즐겁다 못해 감사한 것 역시 같은 맥락이리라
 
-그래서 배움에 이유를 찾자면 범일에는 남에게 내가 가진 것을 더 많이 나누기 위함이라고 대답했겠으나 개인적으로도 누군가의 깊이를 더 잘 알아볼 수 있는 사람이 되어야 하지 않겠는가 하는 생각을 더할 수 있는 날이었다</tw-passagedata><tw-passagedata pid="27" name="21" tags="2019-11-28 letter-from-you longcat" position="572,1076" size="200,200">Double-click this passage to edit it.
-dkdkfkfdkajfskjfl
-
-
-(set: _a to 1) (set: _b to 1)
-{(for: each _a, ...(range:1, 12))[(str: &#39;[&lt;img style=&quot;z-index: 10; position: fixed; left:&#39;+(str: _a*10)+&#39;%; top:&#39;+(str: _a*10)+&#39;%; width:10%; height: auto;&quot; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LACMTA_Circle_Red_Line.svg/1200px-LACMTA_Circle_Red_Line.svg.png&quot;&gt;]&#39;)] }</tw-passagedata><tw-passagedata pid="28" name="22" tags="2019-12-18 diary" position="809,1074" size="200,200">지난 주말엔 3개월만에 본가를 가서 가족들이랑 시간을 보내고 왔다. 종강은 아니었지만 원주에서 해치워야 할 일이 몇 가지 있었는데 올겨울에 방어회를 아직 못 먹은 게 그중 하나였음. 아파트 단지 근처 단골 횟집에서 대방어랑 석화를 조지면서 아빠(취중)가 해준 이야기가 있다.
+그래서 배움에 이유를 찾자면 범일에는 남에게 내가 가진 것을 더 많이 나누기 위함이라고 대답했겠으나 개인적으로도 누군가의 깊이를 더 잘 알아볼 수 있는 사람이 되어야 하지 않겠는가 하는 생각을 더할 수 있는 날이었다</tw-passagedata><tw-passagedata pid="27" name="21" tags="2019-11-28 letter-from-you longcat" position="571,1076" size="200,200">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="28" name="22" tags="2019-12-18 diary" position="809,1074" size="200,200">지난 주말엔 3개월만에 본가를 가서 가족들이랑 시간을 보내고 왔다. 종강은 아니었지만 원주에서 해치워야 할 일이 몇 가지 있었는데 올겨울에 방어회를 아직 못 먹은 게 그중 하나였음. 아파트 단지 근처 단골 횟집에서 대방어랑 석화를 조지면서 아빠(취중)가 해준 이야기가 있다.
 
 [[드림클래스 활동-&gt;12]]을 하면서 아이들에게 문화적 배경을 만들어주는 게 내가 중요하게 생각하는 일 중 하나다. 청소년기에 쌓은 경험 하나하나가 나중에 얼마나 귀중한 재산이 되는지를 실감하고 있어서 내가 억지로 시간을 내서라도 아이들을 인솔해서 뮤지컬이나 연극 공연을 보러 다니고 있다. 물론 티켓은 전부 삼성에서 준다. 머쓱;
 
@@ -466,67 +446,48 @@ dkdkfkfdkajfskjfl
 
 이번에 새로 알게 된 공포증 치료법인데 VR을 이용해서 공포 상황에 노출시키는 &#39;홍수&#39;... 가상 홍수가 되려나. 암튼 그걸 시도하고 있어. VR 기계가 찾아보니 집에 있더라구. 아무래도 진짜가 아니라는 안심 하에 시작돼서 막 미치게 힘들진 않지만, 보는 것만으로도 피로가 누적되더라. 첫 시도는 나름 견딜 만 했어. 근데 시각이란 게 참 누군가를 속이기엔 완벽한 감각인 것 같아. 머리로 진짜가 아니란 걸 알면서도 흠칫 놀라게 되더라구. 
 
-생각보다 리얼해서 심심할 때마다 VR tour라고 여행 영상 보면서 약간 힐링하고 있어. 세상 참 좋다. 빨리 코로나가 끝나길. 챠오.</tw-passagedata><tw-passagedata pid="43" name="40" tags="2021-06-13 letter-from-you" position="812,1844" size="200,200">오늘 돌아보니 우리가 편지로 참 많은 대화를 나눴더라. 너랑 편지 주고받았던 기억은 평생 갈 것 같아. (물론 앞으로도 지속되길 바람. 절대 끝낼 수 없지. ) 가끔 공백도 있었지만 그 사이에 무슨 일이 있었는지 네 편지를 통해서 유추할 수 있었어. 항상 나는 인생이 재미없다며 트라우마 어쩌고저쩌고 이야기를 했겠지? 그래도 그렇게 물렁하다 못해 바스러지는 멘탈을 지녔던 시기가 있었기에 성장할 수 있었던 것 같아. 변태하는 과정 쯤으로 좋게 포장할래. 그리고 그 옆에서 네가 언어로써 나를 지켜줬기에 네게 많은 걸 배우고 빨리 진정할 수 있었던 것 같아 고맙다 은정아. 이젠 [[네가 말했던 단단한 사람-&gt;14]]이 되고 싶어. 아직 멀었지만, 생각해봐. 그 의욕 없던 내가 단단해지고 싶다니! 나도 참 변했다. 정신없이 일하고 공부하다 보니까 어느새 내가 변해있네. 암튼 성인 이후의 첫 성장과정에 네가 은며들어있어서 너무 좋다. 아직 갈 길이 멀다. 쭉 함께 해 줘라.</tw-passagedata><tw-passagedata pid="44" name="쪽글" tags="" position="1619,1239" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="45" name="물방울" tags="" position="1615,1084" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="46" name="회보" tags="" position="1622,1392" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="47" name="컴마 필기" tags="" position="1623,1539" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="48" name="startup" tags="startup" position="1489,115" size="100,100">{
-(set: _a to 1)(set: _b to 1)
-}</tw-passagedata><tw-passagedata pid="49" name="date" tags="NIRWANA (current-date:)&amp;nbsp;&amp;nbsp;(current-time:)" position="1607,116" size="100,100">날짜별로 찾아가기</tw-passagedata><tw-passagedata pid="50" name="category" tags="" position="1721,114" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="51" name="share" tags="" position="1837,116" size="100,100">{&lt;!doctype html&gt;
+생각보다 리얼해서 심심할 때마다 VR tour라고 여행 영상 보면서 약간 힐링하고 있어. 세상 참 좋다. 빨리 코로나가 끝나길. 챠오.</tw-passagedata><tw-passagedata pid="43" name="40" tags="2021-06-13 letter-from-you" position="812,1844" size="200,200">오늘 돌아보니 우리가 편지로 참 많은 대화를 나눴더라. 너랑 편지 주고받았던 기억은 평생 갈 것 같아. (물론 앞으로도 지속되길 바람. 절대 끝낼 수 없지. ) 가끔 공백도 있었지만 그 사이에 무슨 일이 있었는지 네 편지를 통해서 유추할 수 있었어. 항상 나는 인생이 재미없다며 트라우마 어쩌고저쩌고 이야기를 했겠지? 그래도 그렇게 물렁하다 못해 바스러지는 멘탈을 지녔던 시기가 있었기에 성장할 수 있었던 것 같아. 변태하는 과정 쯤으로 좋게 포장할래. 그리고 그 옆에서 네가 언어로써 나를 지켜줬기에 네게 많은 걸 배우고 빨리 진정할 수 있었던 것 같아 고맙다 은정아. 이젠 [[네가 말했던 단단한 사람-&gt;14]]이 되고 싶어. 아직 멀었지만, 생각해봐. 그 의욕 없던 내가 단단해지고 싶다니! 나도 참 변했다. 정신없이 일하고 공부하다 보니까 어느새 내가 변해있네. 암튼 성인 이후의 첫 성장과정에 네가 은며들어있어서 너무 좋다. 아직 갈 길이 멀다. 쭉 함께 해 줘라.</tw-passagedata><tw-passagedata pid="44" name="쪽글" tags="" position="1619,1239" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="45" name="물방울" tags="" position="1615,1084" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="46" name="회보" tags="" position="1622,1392" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="47" name="컴마 필기" tags="" position="1623,1539" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="48" name="startup" tags="startup" position="1486,115" size="100,100">{
+(set: _a to 1)
+}</tw-passagedata><tw-passagedata pid="49" name="date" tags="NIRWANA (current-date:)&amp;nbsp;&amp;nbsp;(current-time:)" position="1601,116" size="200,200">날짜별로 찾아가기</tw-passagedata><tw-passagedata pid="50" name="category" tags="" position="1812,117" size="200,200">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="51" name="share" tags="ContactNirwana ShareYourStory" position="2021,118" size="200,200">{&lt;!doctype html&gt;
 &lt;body&gt;
-  &lt;h2 class=&quot;content-head is-center&quot;&gt;Contact Us!&lt;/h2&gt;
   &lt;aside&gt;
        &lt;p&gt;
-           We would &lt;em&gt;love&lt;/em&gt; to hear from you! &lt;/p&gt;
-           &lt;p&gt;Please use the &lt;b&gt;&lt;em&gt;Contact Form&lt;/em&gt;&lt;/b&gt;
-           to send us a message.
+		  제작자에게 남기고픈 코멘트 또는 질문이 있거나 &lt;br&gt;
+		   Nirwana 홈페이지에 당신의 이야기도 공유하고 싶다면&lt;br&gt;
+		   &lt;br&gt;
+		   아래 양식을 채워 &#39;보내기&#39; 버튼을 눌러주세요.
        &lt;/p&gt;
    &lt;/aside&gt;
 
-&lt;!-- START HERE --&gt;
-   
-&lt;!-- Style The Contact Form How Ever You Prefer --&gt;
-
-  &lt;form class=&quot;gform pure-form pure-form-stacked&quot; method=&quot;POST&quot; data-email=&quot;example@email.net&quot;
-  action=&quot;https://script.google.com/macros/s/AKfycbwCkvtWDMYAa-VpbvwooE1bj7bXdrR4Jph-b6bDeLaOOfk89JDHRW3KbnsiWFR7fffOcQ/exec&quot;&gt;
+&lt;form class=&quot;gform pure-form pure-form-stacked&quot; method=&quot;POST&quot; data-email=&quot;example@email.net&quot;
+  action=&quot;https://script.google.com/macros/s/AKfycbz8s7IR-RVI1ZwVtUJxmGbpKHndGGEtxalC-En15cHhTDgjj7yeeWqGABu272L5Cs6l9A/exec&quot;&gt;
   
     &lt;!-- change the form action to your script url --&gt;
 
     &lt;div class=&quot;form-elements&quot;&gt;
 
       &lt;fieldset class=&quot;pure-group&quot;&gt;
-        &lt;label for=&quot;message&quot;&gt;당신의 이야기: &lt;/label&gt;
-        &lt;textarea id=&quot;message&quot; name=&quot;message&quot; rows=&quot;10&quot;
-        placeholder=&quot;Tell us what&#39;s on your mind...&quot;&gt;&lt;/textarea&gt;
+        &lt;label for=&quot;message&quot;&gt; 제작자는 누가 이 글을 보냈는지 알 수 없어요. &lt;/label&gt;
+        &lt;textarea id=&quot;message&quot; name=&quot;message&quot; rows=&quot;8&quot;
+        placeholder=&quot;여기에 내용을 작성하세요...&quot;&gt;&lt;/textarea&gt;
       &lt;/fieldset&gt;
-
+&lt;br&gt;
       &lt;fieldset class=&quot;pure-group&quot;&gt;
-        &lt;label for=&quot;email&quot;&gt;&lt;em&gt;Your&lt;/em&gt; Email Address:&lt;/label&gt;
-        &lt;input id=&quot;email&quot; name=&quot;email&quot; type=&quot;email&quot; value=&quot;&quot;
-        placeholder=&quot;your.name@email.com&quot;/&gt;
+        &lt;label for=&quot;email&quot;&gt;만약 답장을 원하신다면, 연락드릴 수 있는 이메일 주소를 남겨주세요. &lt;br&gt; 필요 없는 경우, 존재하지 않는 이메일을 아무렇게나 입력하셔도 상관없습니다.&lt;/label&gt;
+		&lt;br&gt;
+		&lt;input id=&quot;email&quot; name=&quot;email&quot; type=&quot;email&quot; value=&quot;&quot;
+        required placeholder=&quot;example@email.com&quot;/&gt;
       &lt;/fieldset&gt;
-
-      &lt;button class=&quot;button-success pure-button button-xlarge&quot;&gt;
-        &lt;i class=&quot;fa fa-paper-plane&quot;&gt;&lt;/i&gt;&amp;nbsp;Send&amp;nbsp;&lt;/button&gt;
+&lt;br&gt;
+      &lt;button class=&quot;button&quot;&gt;보내기&lt;/button&gt;
+	  &lt;br&gt;
     &lt;/div&gt;
-
-	 <label class="sr-only">Keep this field blank</label>
-  <input id="honeypot" type="text" name="honeypot" value="" />
-	
-    &lt;!-- Customise the Thankyou Message People See when they submit the form: --&gt;
-	
-    &lt;div class=&quot;thankyou_message&quot; style=&quot;display:none;&quot;&gt;
-      &lt;h2&gt;&lt;em&gt;Thanks&lt;/em&gt; for contacting us!
-        We will get back to you soon!&lt;/h2&gt;
-    &lt;/div&gt;
-	
-		
-  &lt;!-- Submit the Form to Google Using &quot;AJAX&quot; --&gt;
-  &lt;script data-cfasync=&quot;false&quot; src=&quot;form-submission-handler.js&quot;&gt;&lt;/script&gt;
-
   &lt;/form&gt;
-
+  
+  &lt;script data-cfasync=&quot;false&quot; src=&quot;form-submission-handler.js&quot;&gt;&lt;/script&gt;
   
 &lt;/body&gt;
 &lt;/html&gt;
-
-&lt;!-- END --&gt;
 }</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
