@@ -584,7 +584,7 @@ window.Chapel.Macros.add(e)}();
 	(else-if: $category is &quot;201005&quot;)[(set: $maxnumber to 6)]
 	(else-if: $category is &quot;201203&quot;)[(set: $maxnumber to 5)]
 	(else-if: $category is &quot;201226&quot;)[(set: $maxnumber to 6)]
-	(else:)[(set: $maxnumber to 0)]
+	(else:)[(set: $maxnumber to 1)]
 
 	(for: each _a, ...(range:1, $maxnumber))
 		[(str: &#39;&lt;img style=&quot;z-index:&#39;+(str: _a+1)+&#39;;position: fixed; left:&#39;+(str: (random: -10, 90))+&#39;%; top:&#39;+(str: (random: -10, 90))+&#39;%; width:&#39;+(str: (random: 7, 17))+&#39;%; height: auto; mix-blend-mode: difference;&quot; src=&quot;./resource/&#39;+$category+&#39;/&#39;+(str:_a)+&#39;.png&quot;&gt;&#39;)]
